@@ -1,48 +1,48 @@
-# 1. Билд проекта
+# 1. ГЃГЁГ«Г¤ ГЇГ°Г®ГҐГЄГІГ 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Копируем и восстанавливаем зависимости
-COPY ["task5.csproj", "./"]
-RUN dotnet restore "task5.csproj"
+# ГЉГ®ГЇГЁГ°ГіГҐГ¬ ГЁ ГўГ®Г±Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ
+COPY ["Project.csproj", "./"]
+RUN dotnet restore "Project.csproj"
 
-# Копируем исходный код
+# ГЉГ®ГЇГЁГ°ГіГҐГ¬ ГЁГ±ГµГ®Г¤Г­Г»Г© ГЄГ®Г¤
 COPY . .
 WORKDIR "/src"
 
-# Собираем проект
-RUN dotnet build "task5.csproj" -c Release --no-restore
+# Г‘Г®ГЎГЁГ°Г ГҐГ¬ ГЇГ°Г®ГҐГЄГІ
+RUN dotnet build "Project.csproj" -c Release --no-restore
 
-# Публикуем проект
-RUN dotnet publish "task5.csproj" -c Release -o /app/publish \
+# ГЏГіГЎГ«ГЁГЄГіГҐГ¬ ГЇГ°Г®ГҐГЄГІ
+RUN dotnet publish "Project.csproj" -c Release -o /app/publish \
     --no-restore \
     --no-build \
     --self-contained false
 
-# 2. Финальный образ
+# 2. Г”ГЁГ­Г Г«ГјГ­Г»Г© Г®ГЎГ°Г Г§
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 
-# Устанавливаем системные зависимости для PostgreSQL (если нужно)
+# Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г±ГЁГ±ГІГҐГ¬Г­Г»ГҐ Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г¤Г«Гї PostgreSQL (ГҐГ±Г«ГЁ Г­ГіГ¦Г­Г®)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Копируем собранное приложение
+# ГЉГ®ГЇГЁГ°ГіГҐГ¬ Г±Г®ГЎГ°Г Г­Г­Г®ГҐ ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГҐ
 COPY --from=build /app/publish .
 
-# Переменные окружения
+# ГЏГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ Г®ГЄГ°ГіГ¦ГҐГ­ГЁГї
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV DOTNET_SYSTEM_NET_MAIL_SMTPSERVER=smtp.gmail.com
 ENV DOTNET_SYSTEM_NET_MAIL_SMTPPORT=587
 ENV ASPNETCORE_URLS=http://+:8080
 
-# Безопасность - запуск от non-root пользователя
+# ГЃГҐГ§Г®ГЇГ Г±Г­Г®Г±ГІГј - Г§Г ГЇГіГ±ГЄ Г®ГІ non-root ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 RUN groupadd -r dotnetuser && useradd -r -g dotnetuser dotnetuser
 RUN chown -R dotnetuser:dotnetuser /app
 USER dotnetuser
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "task5.dll"]
+ENTRYPOINT ["dotnet", "Project.dll"]
