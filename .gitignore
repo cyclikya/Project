@@ -19,12 +19,3 @@ appsettings.Local.json
 .env
 *.pem
 *.key
-
-# === Docker / Render ===
-docker-compose*.yml
-.dockerignore
-
-# Оставляем эти файлы!
-# (Render требует их в репозитории)
-!Dockerfile
-!render.yaml
