@@ -1,139 +1,30 @@
-# Общие системные файлы
-.DS_Store
-Thumbs.db
-*.lnk
-
-# Файлы IDE
+﻿# === .NET / Visual Studio ===
+bin/
+obj/
+out/
 .vs/
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# Файлы Rider
-*.sln.iml
-
-# Файлы пользователя
 *.user
-*.userosscache
-*.sln.docstates
-
-# Результаты билда
-[Bb]in/
-[Oo]bj/
-out/
-build/
-
-# Файлы пакетов NuGet
-**/*.[Nn]u[Cc]ache
-*.nuget.props
-*.nuget.targets
-[Nu]Get-Packages/
-**/packages/
-!**/packages.build/
-
-# Файлы тестов
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
-
-# Резервные копии и временные файлы
-*.bak
-*.tmp
-*.temp
-*_ReSharper*
-*.[Pp]ublish.xml
-
-# Файлы Docker
-.dockerignore
-!.dockerignore
-
-# Файлы Azure
-[Aa]zure/
-*.azure-pipelines
-*.pubxml
-
-# Файлы базы данных
-*.mdf
-*.ldf
-*.sdf
-*.sqlite
+*.suo
+*.pdb
+*.dll
+*.exe
+*.log
 *.db
 
-# Файлы миграций Entity Framework (если не хотите коммитить)
-!/Migrations/*.cs
-/Migrations/*.Designer.cs
-/Migrations/*Snapshot.cs
-
-# Файлы логов
-*.log
-*.log*
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-
-# Файлы покрытия кода
-coverage.xml
-coverage.json
-*.coverage
-*.coveragexml
-
-# Файлы производительности
-*.psess
-*.vsp
-*.vspx
-
-# Файлы мониторинга
-*.Monitor
-
-# Файлы проекта
-_ReSharper.Caches/
-*.dotCover
-
-# Файлы веб-браузеров
-*.Browser.*
-
-# Файлы маппинга исходного кода
-*.source.html
-
-# Файлы развертывания
-*.zip
-*.tar.gz
-*.7z
-
-# Файлы окружения и секретов
+# === Secrets and config ===
+appsettings.Development.json
+appsettings.Local.json
 .env
-.env.local
-.env.production
-appsettings.*.json
-!appsettings.json
-!appsettings.*.sample.json
-secrets.json
-*.pfx
-*.p12
-
-# Файлы сертификатов разработки
-localhost-*
-*.cer
-*.crt
+*.pem
 *.key
 
-# Файлы контейнеров
-**/.devcontainer/
-**/container.zip
+# === Docker / Render ===
+docker-compose*.yml
+.dockerignore
 
-# Файлы Node.js (если используется)
-node_modules/
-npm-debug.log
-yarn-debug.log*
-yarn-error.log*
-.pnp.*
-.yarn/
+# Оставляем эти файлы!
+# (Render требует их в репозитории)
+!Dockerfile
+!render.yaml

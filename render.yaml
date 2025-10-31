@@ -1,0 +1,8 @@
+﻿services:
+  - type: web
+    name: Project
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        value: postgres://user:password@hostname:5432/dbname
