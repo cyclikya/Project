@@ -43,3 +43,17 @@ C:\General\ITransition\Project\Project\bin\Debug\net9.0\Npgsql.dll
 C:\General\ITransition\Project\Project\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\General\ITransition\Project\Project\obj\Debug\net9.0\Project.csproj.AssemblyReference.cache
 C:\General\ITransition\Project\Project\obj\Debug\net9.0\Project.csproj.Up2Date
+C:\General\ITransition\Project\Project\obj\Debug\net9.0\Project.sourcelink.json
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\General\ITransition\Project\Project\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
